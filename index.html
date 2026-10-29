@@ -21,6 +21,7 @@
             line-height: 1.7;
         }
 
+        /* Header and navigation */
         header {
             background: #172554;
             color: white;
@@ -58,6 +59,7 @@
             color: #93c5fd;
         }
 
+        /* Hero section */
         .hero {
             background: linear-gradient(135deg, #1d4ed8, #172554);
             color: white;
@@ -91,6 +93,7 @@
             background: #dbeafe;
         }
 
+        /* Main content */
         main {
             max-width: 1050px;
             margin: 50px auto;
@@ -110,6 +113,7 @@
             color: #64748b;
         }
 
+        /* Article cards */
         .posts {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -151,6 +155,11 @@
             font-weight: bold;
         }
 
+        .read-more:hover {
+            text-decoration: underline;
+        }
+
+        /* About section */
         .about {
             margin-top: 50px;
             padding: 30px;
@@ -163,14 +172,67 @@
             margin-bottom: 10px;
         }
 
-       footer {
-    text-align: center;
-    background: #172554;
-    color: #cbd5e1;
-    padding: 25px 15px;
-    margin-top: 60px;
-}
+        /* Footer */
+        .blog-footer {
+            background: #172554;
+            color: #cbd5e1;
+            padding: 45px 6% 0;
+            margin-top: 60px;
+        }
 
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 35px;
+        }
+
+        .footer-menu h3 {
+            color: #60a5fa;
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .footer-menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-menu li {
+            margin-bottom: 10px;
+        }
+
+        .blog-footer .footer-menu a {
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .blog-footer .footer-menu a:hover {
+            color: #1e90ff;
+            text-decoration: underline;
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 30px auto 0;
+            padding: 20px 0;
+            border-top: 1px solid #334155;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        /* Tablet */
+        @media (max-width: 768px) {
+            .footer-container {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 30px 25px;
+            }
+        }
+
+        /* Mobile */
         @media (max-width: 500px) {
             nav {
                 flex-direction: column;
@@ -180,12 +242,30 @@
             .hero {
                 padding: 60px 20px;
             }
+
+            .footer-container {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 25px 15px;
+            }
+
+            .blog-footer {
+                padding: 35px 20px 0;
+            }
+
+            .footer-menu h3 {
+                font-size: 16px;
+            }
+
+            .blog-footer .footer-menu a {
+                font-size: 14px;
+            }
         }
     </style>
 </head>
 
 <body>
 
+    <!-- Header -->
     <header>
         <nav>
             <h1><a href="./">Django Blog</a></h1>
@@ -198,6 +278,7 @@
         </nav>
     </header>
 
+    <!-- Hero section -->
     <section class="hero">
         <h2>Ideas Worth Sharing.</h2>
         <p>
@@ -207,6 +288,7 @@
         <a href="#articles" class="button">Explore Articles</a>
     </section>
 
+    <!-- Main content -->
     <main>
         <section id="articles">
             <div class="section-heading">
@@ -247,6 +329,7 @@
             </div>
         </section>
 
+        <!-- About section -->
         <section class="about" id="about">
             <h2>About Django Blog</h2>
             <p>
@@ -257,55 +340,56 @@
         </section>
     </main>
 
-   
-<footer class="blog-footer">
-    <div class="footer-container">
-        <div class="footer-menu">
-            <h3>About</h3>
-            <ul>
-                <li><a href="#">Our Story</a></li>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Our Team</a></li>
-                <li><a href="#">Contact Us</a></li>
-            </ul>
+    <!-- Footer -->
+    <footer class="blog-footer">
+        <div class="footer-container">
+
+            <div class="footer-menu">
+                <h3>About</h3>
+                <ul>
+                    <li><a href="#">Our Story</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#">Our Team</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-menu">
+                <h3>Categories</h3>
+                <ul>
+                    <li><a href="#">Technology</a></li>
+                    <li><a href="#">Programming</a></li>
+                    <li><a href="#">Lifestyle</a></li>
+                    <li><a href="#">Education</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-menu">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="#">Latest Posts</a></li>
+                    <li><a href="#">Popular Posts</a></li>
+                    <li><a href="#">Tutorials</a></li>
+                    <li><a href="#">FAQs</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-menu">
+                <h3>Legal</h3>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Cookie Policy</a></li>
+                    <li><a href="#">Disclaimer</a></li>
+                </ul>
+            </div>
+
         </div>
 
-        <div class="footer-menu">
-            <h3>Categories</h3>
-            <ul>
-                <li><a href="#">Technology</a></li>
-                <li><a href="#">Programming</a></li>
-                <li><a href="#">Lifestyle</a></li>
-                <li><a href="#">Education</a></li>
-            </ul>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Django Blog. All rights reserved.</p>
         </div>
-
-        <div class="footer-menu">
-            <h3>Resources</h3>
-            <ul>
-                <li><a href="#">Latest Posts</a></li>
-                <li><a href="#">Popular Posts</a></li>
-                <li><a href="#">Tutorials</a></li>
-                <li><a href="#">FAQs</a></li>
-            </ul>
-        </div>
-
-        <div class="footer-menu">
-            <h3>Legal</h3>
-            <ul>
-                <li><a href="#">Privacy Policy</a></li>
-                <li><a href="#">Terms of Service</a></li>
-                <li><a href="#">Cookie Policy</a></li>
-                <li><a href="#">Disclaimer</a></li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="footer-bottom">
-        <p>&copy; 2026 Django Blog. All rights reserved.</p>
-    </div>
-</footer>
-
+    </footer>
 
 </body>
 </html>
