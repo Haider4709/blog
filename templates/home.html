@@ -1,0 +1,28 @@
+
+{% extends 'base.html' %}
+
+{% block title %}Home | Django Blog{% endblock title %}
+
+{% block content %}
+    <h2>Latest Blog Posts</h2>
+
+    {% for post in post_list %}
+        <article class="post-card">
+            <h3>
+                <a href="{{ post.get_absolute_url }}">
+                    {{ post.title }}
+                </a>
+            </h3>
+
+            <p class="author">By {{ post.author }}</p>
+            <p>{{ post.body|truncatewords:30 }}</p>
+
+            <a href="{{ post.get_absolute_url }}" class="read-more">
+                Read More →
+            </a>
+        </article>
+    {% empty %}
+        <p>No blog posts yet. Be the first to create one!</p>
+        <a href="{% url 'post_new' %}" class="button">Create a Post</a>
+    {% endfor %}
+{% endblock content %}
